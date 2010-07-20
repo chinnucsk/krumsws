@@ -6,9 +6,10 @@
   {modules, [
              krumsws,
              krumsws_app,
+             krumsws_utility,
              krumsws_sup,
-             krumsws_resource,
-             krumsws_products
+             krumsws_home,
+             krumsws_product
             ]},
   {registered, []},
   {applications, [

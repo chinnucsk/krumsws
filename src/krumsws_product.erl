@@ -2,7 +2,7 @@
 %% @copyright 2010 Dan Cutting.
 %% @doc Products handler for Krums web service.
 
--module(krumsws_products).
+-module(krumsws_product).
 -export([init/1, content_types_provided/2, to_json/2]).
 
 -include_lib("webmachine/include/webmachine.hrl").
