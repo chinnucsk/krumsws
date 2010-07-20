@@ -9,7 +9,8 @@
              krumsws_utility,
              krumsws_sup,
              krumsws_home,
-             krumsws_product
+             krumsws_product,
+             krumsws_products
             ]},
   {registered, []},
   {applications, [
