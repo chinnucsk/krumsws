@@ -17,6 +17,7 @@ to_json(ReqData, State) ->
 	{ok, Pid} = riakc_pb_socket:start_link(krumsws_utility:riak_host(), krumsws_utility:riak_port()),
 	case riakc_pb_socket:get(Pid, <<"products">>, ProductId) of
 		{ok, Obj} ->
+			% TODO: convert stored representation to that required by web service.
 			{riakc_obj:get_value(Obj), ReqData, State};
 		{error, notfound} ->
 			{{halt, 404}, ReqData, State}

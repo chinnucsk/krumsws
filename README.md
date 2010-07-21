@@ -148,3 +148,19 @@ returns
 		"estimate": "1d",
 		"text": "Do something."
 	}
+
+Riak
+====
+
+Riak will be used as the data store.
+
+MapReduce
+---------
+
+Example of using MapReduce to pull out all products.
+
+	curl -v -d '{"inputs":"products", "query":[{"map":{"language":"javascript","source":"
+	function(v) {
+	  return [v.values[0].data];
+	}
+	"}}]}' -H "Content-Type: application/json" http://127.0.0.1:8091/mapred
