@@ -14,6 +14,7 @@ content_types_provided(ReqData, State) ->
 
 to_json(ReqData, State) ->
 	ProductId = wrq:path_info(product, ReqData),
+	% TODO: handle absent Riak service by returning a 503.
 	{ok, Pid} = riakc_pb_socket:start_link(krumsws_utility:riak_host(), krumsws_utility:riak_port()),
 	case riakc_pb_socket:get(Pid, <<"products">>, ProductId) of
 		{ok, Obj} ->
